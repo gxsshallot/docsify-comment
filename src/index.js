@@ -13,7 +13,7 @@ function docsifyFoldComment(hook, vm) {
             val.style.display = 'none';
             // Add button
             const img = document.createElement('img');
-            img.src = './right.jpg';
+            img.src = require('./right.jpg');
             img.classList.add('docsify-fold-comment-button');
             nodes[i - 1].appendChild(img);
             // Set parent position
@@ -29,10 +29,10 @@ function docsifyFoldComment(hook, vm) {
                 const codeNode = button.parentNode.nextSibling;
                 const isHidden = codeNode.style.display === 'none';
                 if (isHidden) {
-                    button.src = './down.jpg';
+                    button.src = require('./down.jpg');
                     codeNode.style.display = 'block';
                 } else {
-                    button.src = './right.jpg';
+                    button.src = require('./right.jpg');
                     codeNode.style.display = 'none';
                 }
             }

@@ -1,35 +1,28 @@
 {
     "name": "docsify-comment",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "A docsify plugin that controls the comment code show or hide.",
     "author": "Xiaosong Gao <gaoxiaosong06@gmail.com>",
     "license": "MIT",
-    "homepage": "https://github.com/classical-chinese/docsify-comment",
+    "homepage": "https://github.com/classical-chinese/docsify-comment#README",
     "repository": "git@github.com:classical-chinese/docsify-comment.git",
     "files": [
-      "dist"
+        "dist"
     ],
-    "main": "dist/docsify-comment.js",
+    "main": "dist/docsify-comment.min.js",
     "unpkg": "dist/docsify-comment.min.js",
     "scripts": {
-      "build": "rollup -c",
-      "clean": "rimraf dist/*",
-      "prepare": "npm run clean && npm run build",
-      "start": "npm run build -- -w"
+        "build": "./node_modules/.bin/webpack --mode production"
     },
     "devDependencies": {
-      "autoprefixer": "^8.2.0",
-      "babel-core": "^6.26.0",
-      "babel-plugin-external-helpers": "^6.22.0",
-      "babel-preset-env": "^1.6.1",
-      "lodash.merge": "^4.6.1",
-      "rimraf": "^2.6.2",
-      "rollup": "^0.57.1",
-      "rollup-plugin-babel": "^3.0.2",
-      "rollup-plugin-commonjs": "^9.1.0",
-      "rollup-plugin-json": "^2.3.0",
-      "rollup-plugin-node-resolve": "^3.3.0",
-      "rollup-plugin-postcss": "^1.5.1",
-      "rollup-plugin-uglify": "^3.0.0"
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.2.3",
+        "babel-loader": "^8.0.5",
+        "css-loader": "^2.1.0",
+        "file-loader": "^3.0.1",
+        "style-loader": "^0.23.1",
+        "url-loader": "^1.1.2",
+        "webpack": "^4.28.4",
+        "webpack-cli": "^3.2.1"
     }
 }
