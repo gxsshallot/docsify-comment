@@ -1,0 +1,13 @@
+.docsify-fold-comment-button {
+    position: absolute;
+    z-index: 1;
+    left: -40px;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    cursor: pointer;
+    padding: 10px;
+}

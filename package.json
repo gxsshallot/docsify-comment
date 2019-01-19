@@ -1,0 +1,35 @@
+{
+    "name": "docsify-comment",
+    "version": "0.0.1",
+    "description": "A docsify plugin that controls the comment code show or hide.",
+    "author": "Xiaosong Gao <gaoxiaosong06@gmail.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/classical-chinese/docsify-comment",
+    "repository": "git@github.com:classical-chinese/docsify-comment.git",
+    "files": [
+      "dist"
+    ],
+    "main": "dist/docsify-comment.js",
+    "unpkg": "dist/docsify-comment.min.js",
+    "scripts": {
+      "build": "rollup -c",
+      "clean": "rimraf dist/*",
+      "prepare": "npm run clean && npm run build",
+      "start": "npm run build -- -w"
+    },
+    "devDependencies": {
+      "autoprefixer": "^8.2.0",
+      "babel-core": "^6.26.0",
+      "babel-plugin-external-helpers": "^6.22.0",
+      "babel-preset-env": "^1.6.1",
+      "lodash.merge": "^4.6.1",
+      "rimraf": "^2.6.2",
+      "rollup": "^0.57.1",
+      "rollup-plugin-babel": "^3.0.2",
+      "rollup-plugin-commonjs": "^9.1.0",
+      "rollup-plugin-json": "^2.3.0",
+      "rollup-plugin-node-resolve": "^3.3.0",
+      "rollup-plugin-postcss": "^1.5.1",
+      "rollup-plugin-uglify": "^3.0.0"
+    }
+}
