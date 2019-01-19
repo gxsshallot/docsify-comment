@@ -5,7 +5,7 @@
 Install:
 
 ```
-<script src="//unpkg.com/docsify-comment/dist/docsify-comment.min.js"></script>
+<script src="//unpkg.com/docsify-comment@latest/dist/docsify-comment.min.js"></script>
 ```
 
 Add comment code between paragraph. Language is `comment`.

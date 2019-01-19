@@ -11,3 +11,7 @@
     cursor: pointer;
     padding: 10px;
 }
+
+pre[data-lang="comment"] > code {
+    overflow-wrap: break-word;
+}

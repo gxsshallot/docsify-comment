@@ -1,6 +1,6 @@
 {
     "name": "docsify-comment",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A docsify plugin that controls the comment code show or hide.",
     "author": "Xiaosong Gao <gaoxiaosong06@gmail.com>",
     "license": "MIT",
