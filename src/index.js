@@ -1,23 +1,31 @@
 import styles from './styles.css';
 
-function docsifyFoldComment(hook, vm) {
+const __show_image__ = require('./down.jpg');
+const __hide_image__ = require('./right.jpg');
+
+function changeFoldCommentButtonStatus(button, status) {
+    const codeNode = button.parentNode.nextSibling;
+    if (status) {
+        button.src = __show_image__;
+        codeNode.style.display = 'block';
+    } else {
+        button.src = __hide_image__;
+        codeNode.style.display = 'none';
+    }
+}
+
+function docsifyFoldComment(hook) {
     hook.doneEach(function () {
-        const nodes = document.querySelector('#main').childNodes;
-        nodes.forEach(function (val, i) {
-            // filter not p+pre[data-lang="comment"]
-            if (i === 0) return;
-            if (val.nodeName !== 'PRE') return;
-            if (val.getAttribute('data-lang') !== 'comment') return;
-            if (nodes[i - 1].nodeName !== 'P') return;
-            // Hide Code
-            val.style.display = 'none';
+        const nodes = document.querySelectorAll('pre[data-lang="comment"]');
+        nodes.forEach(function (val) {
+            const prvItem = val.previousSibling;
+            if (prvItem.nodeName !== 'P') return;
             // Add button
-            const img = document.createElement('img');
-            img.src = require('./right.jpg');
-            img.classList.add('docsify-fold-comment-button');
-            nodes[i - 1].appendChild(img);
-            // Set parent position
-            nodes[i - 1].style.position = 'relative';
+            const button = document.createElement('img');
+            button.classList.add('docsify-fold-comment-button');
+            prvItem.appendChild(button);
+            prvItem.style.position = 'relative';
+            changeFoldCommentButtonStatus(button, false);
         });
     });
     hook.mounted(function () {
@@ -28,13 +36,7 @@ function docsifyFoldComment(hook, vm) {
                 const button = evt.target;
                 const codeNode = button.parentNode.nextSibling;
                 const isHidden = codeNode.style.display === 'none';
-                if (isHidden) {
-                    button.src = require('./down.jpg');
-                    codeNode.style.display = 'block';
-                } else {
-                    button.src = require('./right.jpg');
-                    codeNode.style.display = 'none';
-                }
+                changeFoldCommentButtonStatus(button, isHidden);
             }
         });
     });
